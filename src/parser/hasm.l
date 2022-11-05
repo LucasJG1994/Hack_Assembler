@@ -1,6 +1,5 @@
 %{
 	#include "hasm.tab.h"
-	#include "custom_string.h"
 	extern int line;
 %}
 
