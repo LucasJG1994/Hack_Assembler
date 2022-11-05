@@ -1118,7 +1118,7 @@ case 62:
 /* rule 62 can match eol */
 YY_RULE_SETUP
 #line 77 "hasm.l"
-{ /*pass*/									};
+{ /*pass*/line++;							};
 	YY_BREAK
 case 63:
 YY_RULE_SETUP

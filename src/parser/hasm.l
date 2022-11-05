@@ -74,6 +74,6 @@
 [a-zA-Z_\.$][a-zA-Z0-9_\.$]*		{ yylval.sval = yytext; return ID;			};
 [\n\r]								{ line++;									};
 [ \t]								{ /*pass*/									};
-"//".*\n							{ /*pass*/									};
+"//".*\n							{ /*pass*/line++;							};
 
 .									{ printf("Unknown Character %s...\n", yytext); };

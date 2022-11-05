@@ -24,6 +24,8 @@ int main(int argc, char** argv){
 		fread(buffer, sizeof(char), length, fp);
 		fclose(fp);
 		
+		buffer[length] = 0;
+
 		//First Pass
 		parser_init(buffer);
 		//Second Pass
