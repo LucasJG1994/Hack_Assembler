@@ -1529,229 +1529,229 @@ yyreduce:
   case 4:
 /* Line 1792 of yacc.c  */
 #line 42 "hasm.y"
-    { (yyval.ival) = (((yyvsp[(1) - (3)].ival) << 3) | ((yyvsp[(3) - (3)].ival) << 6)) | (7 << 13); op_count+=2;	}
+    { (yyval.ival) = (((yyvsp[(1) - (3)].ival) << 3) | ((yyvsp[(3) - (3)].ival) << 6)) | (7 << 13); op_count++;		}
     break;
 
   case 5:
 /* Line 1792 of yacc.c  */
 #line 43 "hasm.y"
-    { (yyval.ival) = (((yyvsp[(1) - (5)].ival) << 3) | ((yyvsp[(3) - (5)].ival) << 6) | (yyvsp[(5) - (5)].ival)) | (7 << 13); op_count+=2;}
+    { (yyval.ival) = (((yyvsp[(1) - (5)].ival) << 3) | ((yyvsp[(3) - (5)].ival) << 6) | (yyvsp[(5) - (5)].ival)) | (7 << 13); op_count++;}
     break;
 
   case 6:
 /* Line 1792 of yacc.c  */
 #line 44 "hasm.y"
-    { (yyval.ival) = (((yyvsp[(1) - (3)].ival) << 6) | (yyvsp[(3) - (3)].ival)) | (7 << 13); op_count+=2;			}
+    { (yyval.ival) = (((yyvsp[(1) - (3)].ival) << 6) | (yyvsp[(3) - (3)].ival)) | (7 << 13); op_count++;			}
     break;
 
   case 7:
 /* Line 1792 of yacc.c  */
 #line 45 "hasm.y"
-    { (yyval.ival) = (yyvsp[(2) - (2)].ival); op_count+=2;										}
+    { (yyval.ival) = (yyvsp[(2) - (2)].ival);		op_count++;									}
     break;
 
   case 8:
 /* Line 1792 of yacc.c  */
 #line 46 "hasm.y"
-    { (yyval.ival) = 0 ; op_count+=2;										}
+    { (yyval.ival) = 0 ;		op_count++;									}
     break;
 
   case 9:
 /* Line 1792 of yacc.c  */
 #line 47 "hasm.y"
-    { (yyval.ival) = 1 ; op_count+=2;										}
+    { (yyval.ival) = 1 ;		op_count++;									}
     break;
 
   case 10:
 /* Line 1792 of yacc.c  */
 #line 48 "hasm.y"
-    { (yyval.ival) = 0;													}
+    { (yyval.ival) = 0;		op_count++;									}
     break;
 
   case 11:
 /* Line 1792 of yacc.c  */
 #line 49 "hasm.y"
-    { (yyval.ival) = 1;													}
+    { (yyval.ival) = 1;		op_count++;									}
     break;
 
   case 12:
 /* Line 1792 of yacc.c  */
 #line 50 "hasm.y"
-    { (yyval.ival) = 2;													}
+    { (yyval.ival) = 2;		op_count++;									}
     break;
 
   case 13:
 /* Line 1792 of yacc.c  */
 #line 51 "hasm.y"
-    { (yyval.ival) = 3;													}
+    { (yyval.ival) = 3;		op_count++;									}
     break;
 
   case 14:
 /* Line 1792 of yacc.c  */
 #line 52 "hasm.y"
-    { (yyval.ival) = 4;													}
+    { (yyval.ival) = 4;		op_count++;									}
     break;
 
   case 15:
 /* Line 1792 of yacc.c  */
 #line 53 "hasm.y"
-    { (yyval.ival) = 0;													}
+    { (yyval.ival) = 0;		op_count++;									}
     break;
 
   case 16:
 /* Line 1792 of yacc.c  */
 #line 54 "hasm.y"
-    { (yyval.ival) = 1;													}
+    { (yyval.ival) = 1;		op_count++;									}
     break;
 
   case 17:
 /* Line 1792 of yacc.c  */
 #line 55 "hasm.y"
-    { (yyval.ival) = 2;													}
+    { (yyval.ival) = 2;		op_count++;									}
     break;
 
   case 18:
 /* Line 1792 of yacc.c  */
 #line 56 "hasm.y"
-    { (yyval.ival) = 3;													}
+    { (yyval.ival) = 3;		op_count++;									}
     break;
 
   case 19:
 /* Line 1792 of yacc.c  */
 #line 57 "hasm.y"
-    { (yyval.ival) = 4;													}
+    { (yyval.ival) = 4;		op_count++;									}
     break;
 
   case 20:
 /* Line 1792 of yacc.c  */
 #line 58 "hasm.y"
-    { (yyval.ival) = 5;													}
+    { (yyval.ival) = 5;		op_count++;									}
     break;
 
   case 21:
 /* Line 1792 of yacc.c  */
 #line 59 "hasm.y"
-    { (yyval.ival) = 6;													}
+    { (yyval.ival) = 6;		op_count++;									}
     break;
 
   case 22:
 /* Line 1792 of yacc.c  */
 #line 60 "hasm.y"
-    { (yyval.ival) = 7;													}
+    { (yyval.ival) = 7;		op_count++;									}
     break;
 
   case 23:
 /* Line 1792 of yacc.c  */
 #line 61 "hasm.y"
-    { (yyval.ival) = 8;													}
+    { (yyval.ival) = 8;		op_count++;									}
     break;
 
   case 24:
 /* Line 1792 of yacc.c  */
 #line 62 "hasm.y"
-    { (yyval.ival) = 9;													}
+    { (yyval.ival) = 9;		op_count++;									}
     break;
 
   case 25:
 /* Line 1792 of yacc.c  */
 #line 63 "hasm.y"
-    { (yyval.ival) = 10;													}
+    { (yyval.ival) = 10;		op_count++;									}
     break;
 
   case 26:
 /* Line 1792 of yacc.c  */
 #line 64 "hasm.y"
-    { (yyval.ival) = 11;													}
+    { (yyval.ival) = 11;		op_count++;									}
     break;
 
   case 27:
 /* Line 1792 of yacc.c  */
 #line 65 "hasm.y"
-    { (yyval.ival) = 12;													}
+    { (yyval.ival) = 12;		op_count++;									}
     break;
 
   case 28:
 /* Line 1792 of yacc.c  */
 #line 66 "hasm.y"
-    { (yyval.ival) = 13;													}
+    { (yyval.ival) = 13;		op_count++;									}
     break;
 
   case 29:
 /* Line 1792 of yacc.c  */
 #line 67 "hasm.y"
-    { (yyval.ival) = 14;													}
+    { (yyval.ival) = 14;		op_count++;									}
     break;
 
   case 30:
 /* Line 1792 of yacc.c  */
 #line 68 "hasm.y"
-    { (yyval.ival) = 15;													}
+    { (yyval.ival) = 15;		op_count++;									}
     break;
 
   case 31:
 /* Line 1792 of yacc.c  */
 #line 69 "hasm.y"
-    { (yyval.ival) = 16384;												}
+    { (yyval.ival) = 16384;	op_count++;									}
     break;
 
   case 32:
 /* Line 1792 of yacc.c  */
 #line 70 "hasm.y"
-    { (yyval.ival) = 24576;												}
+    { (yyval.ival) = 24576;	op_count++;									}
     break;
 
   case 33:
 /* Line 1792 of yacc.c  */
 #line 71 "hasm.y"
-    { (yyval.ival) = 5;													}
+    { (yyval.ival) = 5;		op_count++;									}
     break;
 
   case 34:
 /* Line 1792 of yacc.c  */
 #line 72 "hasm.y"
-    { (yyval.ival) = 6;													}
+    { (yyval.ival) = 6;		op_count++;									}
     break;
 
   case 35:
 /* Line 1792 of yacc.c  */
 #line 73 "hasm.y"
-    { (yyval.ival) = 7;													}
+    { (yyval.ival) = 7;		op_count++;									}
     break;
 
   case 36:
 /* Line 1792 of yacc.c  */
 #line 74 "hasm.y"
-    { (yyval.ival) = 8;													}
+    { (yyval.ival) = 8;		op_count++;									}
     break;
 
   case 37:
 /* Line 1792 of yacc.c  */
 #line 75 "hasm.y"
-    { (yyval.ival) = 9;													}
+    { (yyval.ival) = 9;		op_count++;									}
     break;
 
   case 38:
 /* Line 1792 of yacc.c  */
 #line 76 "hasm.y"
-    { (yyval.ival) = 10;													}
+    { (yyval.ival) = 10;		op_count++;									}
     break;
 
   case 39:
 /* Line 1792 of yacc.c  */
 #line 77 "hasm.y"
-    { (yyval.ival) = 11;													}
+    { (yyval.ival) = 11;		op_count++;									}
     break;
 
   case 40:
 /* Line 1792 of yacc.c  */
 #line 78 "hasm.y"
-    { (yyval.ival) = 12;													}
+    { (yyval.ival) = 12;		op_count++;									}
     break;
 
   case 41:
 /* Line 1792 of yacc.c  */
 #line 79 "hasm.y"
-    { (yyval.ival) = label_get((yyvsp[(2) - (2)].sval), var_count++); op_count+=2;				}
+    { (yyval.ival) = label_get((yyvsp[(2) - (2)].sval), var_count++); op_count++;				}
     break;
 
   case 42:
@@ -2253,12 +2253,15 @@ void parser_init(const char* buffer){
 	fw_init();
 
 	line = 0;
-	op_count = 2;
+	op_count = 0;
 	var_count = 16;
 	
 	yy_scan_string(buffer);
 	yyparse();
 	
+	fw_write(0);
+	fw_write(0);
+
 	fw_close();
 }
 

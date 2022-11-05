@@ -39,44 +39,44 @@ start:							{}
 		| start expr			{ fw_write(($2 & 0xFF00) >> 8); fw_write($2 & 0xFF); }
 		;
 
-expr:	  dst EQ cmp			{ $$ = (($1 << 3) | ($3 << 6)) | (7 << 13); op_count+=2;	}
-		| dst EQ cmp SEMI jmp	{ $$ = (($1 << 3) | ($3 << 6) | $5) | (7 << 13); op_count+=2;}
-		| cmp SEMI jmp			{ $$ = (($1 << 6) | $3) | (7 << 13); op_count+=2;			}
-		| AT NUM 				{ $$ = $2; op_count+=2;										}
-		| AT ZERO				{ $$ = 0 ; op_count+=2;										}
-		| AT ONE				{ $$ = 1 ; op_count+=2;										}
-		| AT SP					{ $$ = 0;													}
-		| AT LCL				{ $$ = 1;													}
-		| AT ARG				{ $$ = 2;													}
-		| AT THIS				{ $$ = 3;													}
-		| AT THAT				{ $$ = 4;													}
-		| AT R0					{ $$ = 0;													}
-		| AT R1					{ $$ = 1;													}
-		| AT R2					{ $$ = 2;													}
-		| AT R3					{ $$ = 3;													}
-		| AT R4					{ $$ = 4;													}
-		| AT R5					{ $$ = 5;													}
-		| AT R6					{ $$ = 6;													}
-		| AT R7					{ $$ = 7;													}
-		| AT R8					{ $$ = 8;													}
-		| AT R9					{ $$ = 9;													}
-		| AT R10				{ $$ = 10;													}
-		| AT R11				{ $$ = 11;													}
-		| AT R12				{ $$ = 12;													}
-		| AT R13				{ $$ = 13;													}
-		| AT R14				{ $$ = 14;													}
-		| AT R15				{ $$ = 15;													}
-		| AT SCREEN				{ $$ = 16384;												}
-		| AT KBD				{ $$ = 24576;												}
-		| AT TEMP0				{ $$ = 5;													}
-		| AT TEMP1				{ $$ = 6;													}
-		| AT TEMP2				{ $$ = 7;													}
-		| AT TEMP3				{ $$ = 8;													}
-		| AT TEMP4				{ $$ = 9;													}
-		| AT TEMP5				{ $$ = 10;													}
-		| AT TEMP6				{ $$ = 11;													}
-		| AT TEMP7				{ $$ = 12;													}
-		| AT ID					{ $$ = label_get($2, var_count++); op_count+=2;				}
+expr:	  dst EQ cmp			{ $$ = (($1 << 3) | ($3 << 6)) | (7 << 13); op_count++;		}
+		| dst EQ cmp SEMI jmp	{ $$ = (($1 << 3) | ($3 << 6) | $5) | (7 << 13); op_count++;}
+		| cmp SEMI jmp			{ $$ = (($1 << 6) | $3) | (7 << 13); op_count++;			}
+		| AT NUM 				{ $$ = $2;		op_count++;									}
+		| AT ZERO				{ $$ = 0 ;		op_count++;									}
+		| AT ONE				{ $$ = 1 ;		op_count++;									}
+		| AT SP					{ $$ = 0;		op_count++;									}
+		| AT LCL				{ $$ = 1;		op_count++;									}
+		| AT ARG				{ $$ = 2;		op_count++;									}
+		| AT THIS				{ $$ = 3;		op_count++;									}
+		| AT THAT				{ $$ = 4;		op_count++;									}
+		| AT R0					{ $$ = 0;		op_count++;									}
+		| AT R1					{ $$ = 1;		op_count++;									}
+		| AT R2					{ $$ = 2;		op_count++;									}
+		| AT R3					{ $$ = 3;		op_count++;									}
+		| AT R4					{ $$ = 4;		op_count++;									}
+		| AT R5					{ $$ = 5;		op_count++;									}
+		| AT R6					{ $$ = 6;		op_count++;									}
+		| AT R7					{ $$ = 7;		op_count++;									}
+		| AT R8					{ $$ = 8;		op_count++;									}
+		| AT R9					{ $$ = 9;		op_count++;									}
+		| AT R10				{ $$ = 10;		op_count++;									}
+		| AT R11				{ $$ = 11;		op_count++;									}
+		| AT R12				{ $$ = 12;		op_count++;									}
+		| AT R13				{ $$ = 13;		op_count++;									}
+		| AT R14				{ $$ = 14;		op_count++;									}
+		| AT R15				{ $$ = 15;		op_count++;									}
+		| AT SCREEN				{ $$ = 16384;	op_count++;									}
+		| AT KBD				{ $$ = 24576;	op_count++;									}
+		| AT TEMP0				{ $$ = 5;		op_count++;									}
+		| AT TEMP1				{ $$ = 6;		op_count++;									}
+		| AT TEMP2				{ $$ = 7;		op_count++;									}
+		| AT TEMP3				{ $$ = 8;		op_count++;									}
+		| AT TEMP4				{ $$ = 9;		op_count++;									}
+		| AT TEMP5				{ $$ = 10;		op_count++;									}
+		| AT TEMP6				{ $$ = 11;		op_count++;									}
+		| AT TEMP7				{ $$ = 12;		op_count++;									}
+		| AT ID					{ $$ = label_get($2, var_count++); op_count++;				}
 		| LP ID RP				{ label_add($2, op_count); printf("(%s)\n", $2);			}
 		;
 
@@ -134,12 +134,15 @@ void parser_init(const char* buffer){
 	fw_init();
 
 	line = 0;
-	op_count = 2;
+	op_count = 0;
 	var_count = 16;
 	
 	yy_scan_string(buffer);
 	yyparse();
 	
+	fw_write(0);
+	fw_write(0);
+
 	fw_close();
 }
 
