@@ -28,11 +28,12 @@ void label_add(const char* key, int data){
 	LABEL[k] = data;
 }
 
-int label_get(const char* key, int data){
+int label_get(const char* key, int* data){
 	std::string k(key);
 	if(FIND(LABEL, k)) return LABEL[k];
 	if(FIND(VAR, k)) return VAR[k];
-	VAR[k] = data;
+	VAR[k] = *data;
+	(*data)++;
 	return VAR[k];
 }
 
