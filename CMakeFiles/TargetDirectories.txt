@@ -1,0 +1,3 @@
+C:/hack_workspace/Hack_Assembler/CMakeFiles/hasm.dir
+C:/hack_workspace/Hack_Assembler/CMakeFiles/ALL_BUILD.dir
+C:/hack_workspace/Hack_Assembler/CMakeFiles/ZERO_CHECK.dir
