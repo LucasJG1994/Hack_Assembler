@@ -36,7 +36,7 @@
 %%
 
 start:							{}
-		| start expr			{ if($2 != -1) {fw_write(($2 & 0xFF00) >> 8); fw_write($2 & 0xFF);} }
+		| start expr			{ if($2 != -1) {fw_write(($2 & 0xFF00) >> 8); fw_write($2 & 0xFF); fw_write_txt($2);} }
 		;
 
 expr:	  dst EQ cmp			{ $$ = (($1 << 3) | ($3 << 6)) | (7 << 13); op_count++;		}
@@ -77,7 +77,7 @@ expr:	  dst EQ cmp			{ $$ = (($1 << 3) | ($3 << 6)) | (7 << 13); op_count++;		}
 		| AT TEMP6				{ $$ = 11;		op_count++;									}
 		| AT TEMP7				{ $$ = 12;		op_count++;									}
 		| AT ID					{ $$ = label_get($2, &var_count); op_count++;				}
-		| LP ID RP				{ $$ = -1; label_add($2, op_count); printf("(%s %d)\n", $2, op_count);}
+		| LP ID RP				{ $$ = -1; label_add($2, op_count);							}
 		;
 
 dst:	  A						{ $$ = 0b0100; }

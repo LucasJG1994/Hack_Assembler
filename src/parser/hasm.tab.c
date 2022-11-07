@@ -1523,7 +1523,7 @@ yyreduce:
   case 3:
 /* Line 1792 of yacc.c  */
 #line 39 "hasm.y"
-    { if((yyvsp[(2) - (2)].ival) != -1) {fw_write(((yyvsp[(2) - (2)].ival) & 0xFF00) >> 8); fw_write((yyvsp[(2) - (2)].ival) & 0xFF);} }
+    { if((yyvsp[(2) - (2)].ival) != -1) {fw_write(((yyvsp[(2) - (2)].ival) & 0xFF00) >> 8); fw_write((yyvsp[(2) - (2)].ival) & 0xFF); fw_write_txt((yyvsp[(2) - (2)].ival));} }
     break;
 
   case 4:
@@ -1757,7 +1757,7 @@ yyreduce:
   case 42:
 /* Line 1792 of yacc.c  */
 #line 80 "hasm.y"
-    { (yyval.ival) = -1; label_add((yyvsp[(2) - (3)].sval), op_count); printf("(%s %d)\n", (yyvsp[(2) - (3)].sval), op_count);}
+    { (yyval.ival) = -1; label_add((yyvsp[(2) - (3)].sval), op_count);							}
     break;
 
   case 43:

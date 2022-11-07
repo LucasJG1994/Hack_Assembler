@@ -2,6 +2,7 @@
 #include <map>
 #include <queue>
 #include <string>
+#include <iostream>
 
 static std::map<std::string, int> LABEL;
 static std::map<std::string, int> VAR;
@@ -32,8 +33,16 @@ int label_get(const char* key, int* data){
 	std::string k(key);
 	if(FIND(LABEL, k)) return LABEL[k];
 	if(FIND(VAR, k)) return VAR[k];
+
+	if(!USED_VAR.empty()){
+		VAR[k] = USED_VAR.front(); - 1;
+		USED_VAR.pop();
+		return VAR[k];
+	}
+
 	VAR[k] = *data;
 	(*data)++;
+	std::cout << "KEY: " << k << " " << VAR[k] << std::endl;
 	return VAR[k];
 }
 

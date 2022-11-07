@@ -457,7 +457,7 @@ extern int yylex (void);
 #undef yyTABLES_NAME
 #endif
 
-#line 80 "hasm.l"
+#line 71 "hasm.l"
 
 #line 462 "lex.yy.h"
 #undef yyIN_HEADER
