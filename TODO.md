@@ -8,3 +8,6 @@
 - [x] Test Code Gen Module (Code Gen along with Label offsets needs testing. Run in Emulator)
 
 - [x] Added testing support with Nand2Tetris tool
+
+- [x] Replaced Flex with hand-written scanner
+- [x] fixed variable offset
