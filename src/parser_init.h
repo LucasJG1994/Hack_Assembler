@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-void parser_init(const char* buffer);
+void parser_init();
 
 #if __cplusplus
 }

@@ -93,18 +93,11 @@ extern int yydebug;
      THAT = 302,
      KBD = 303,
      SCREEN = 304,
-     TEMP0 = 305,
-     TEMP1 = 306,
-     TEMP2 = 307,
-     TEMP3 = 308,
-     TEMP4 = 309,
-     TEMP5 = 310,
-     TEMP6 = 311,
-     TEMP7 = 312,
-     ZERO = 313,
-     ONE = 314,
-     NUM = 315,
-     ID = 316
+     _EOF_ = 305,
+     ZERO = 306,
+     ONE = 307,
+     NUM = 308,
+     ID = 309
    };
 #endif
 
@@ -120,7 +113,7 @@ typedef union YYSTYPE
 
 
 /* Line 2058 of yacc.c  */
-#line 124 "hasm.tab.h"
+#line 117 "hasm.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

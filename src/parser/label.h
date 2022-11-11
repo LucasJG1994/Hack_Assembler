@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 void label_add(const char* key, int data);
-int  label_get(const char* key, int* data);
+int  label_get(const char* key);
 
 #if __cplusplus
 }

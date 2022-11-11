@@ -498,9 +498,12 @@ char *yytext;
 #line 1 "hasm.l"
 #line 2 "hasm.l"
 	#include "hasm.tab.h"
+
 	extern int line;
-#line 502 "lex.yy.c"
-#line 503 "lex.yy.c"
+	
+
+#line 505 "lex.yy.c"
+#line 506 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -709,10 +712,10 @@ YY_DECL
 		}
 
 	{
-#line 8 "hasm.l"
+#line 11 "hasm.l"
 
 
-#line 715 "lex.yy.c"
+#line 718 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -771,289 +774,291 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "hasm.l"
+#line 13 "hasm.l"
 { return EQ;	};
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "hasm.l"
+#line 14 "hasm.l"
 { return ADD;	};
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "hasm.l"
+#line 15 "hasm.l"
 { return SUB;	};
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "hasm.l"
+#line 16 "hasm.l"
 { return AND;	};
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 14 "hasm.l"
+#line 17 "hasm.l"
 { return OR;	};
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 15 "hasm.l"
+#line 18 "hasm.l"
 { return NOT;	};
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 16 "hasm.l"
+#line 19 "hasm.l"
 { return SEMI;	};
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 17 "hasm.l"
+#line 20 "hasm.l"
 { return LP;	};
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 18 "hasm.l"
+#line 21 "hasm.l"
 { return RP;	};
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 19 "hasm.l"
+#line 22 "hasm.l"
 { return AT;	};
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 21 "hasm.l"
+#line 24 "hasm.l"
 { return A;		};
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 22 "hasm.l"
+#line 25 "hasm.l"
 { return M;		};
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 23 "hasm.l"
+#line 26 "hasm.l"
 { return D;		};
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 24 "hasm.l"
+#line 27 "hasm.l"
 { return AM;	};
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 25 "hasm.l"
+#line 28 "hasm.l"
 { return AD;	};
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 26 "hasm.l"
+#line 29 "hasm.l"
 { return MD;	};
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 27 "hasm.l"
+#line 30 "hasm.l"
 { return AMD;	};
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 29 "hasm.l"
+#line 32 "hasm.l"
 { return JGT;	};
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 30 "hasm.l"
+#line 33 "hasm.l"
 { return JEQ;	};
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 31 "hasm.l"
+#line 34 "hasm.l"
 { return JGE;	};
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 32 "hasm.l"
+#line 35 "hasm.l"
 { return JLT;	};
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 33 "hasm.l"
+#line 36 "hasm.l"
 { return JNE;	};
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 34 "hasm.l"
+#line 37 "hasm.l"
 { return JLE;	};
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 35 "hasm.l"
+#line 38 "hasm.l"
 { return JMP;	};
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 37 "hasm.l"
+#line 40 "hasm.l"
 { return R0;  };
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 38 "hasm.l"
+#line 41 "hasm.l"
 { return R1;  };
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 39 "hasm.l"
+#line 42 "hasm.l"
 { return R2;  };
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 40 "hasm.l"
+#line 43 "hasm.l"
 { return R3;  };
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 41 "hasm.l"
+#line 44 "hasm.l"
 { return R4;  };
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 42 "hasm.l"
+#line 45 "hasm.l"
 { return R5;  };
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 43 "hasm.l"
+#line 46 "hasm.l"
 { return R6;  };
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 44 "hasm.l"
+#line 47 "hasm.l"
 { return R7;  };
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 45 "hasm.l"
+#line 48 "hasm.l"
 { return R8;  };
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 46 "hasm.l"
+#line 49 "hasm.l"
 { return R9;  };
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 47 "hasm.l"
+#line 50 "hasm.l"
 { return R10; };
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 48 "hasm.l"
+#line 51 "hasm.l"
 { return R11; };
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 49 "hasm.l"
+#line 52 "hasm.l"
 { return R12; };
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 50 "hasm.l"
+#line 53 "hasm.l"
 { return R13; };
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 51 "hasm.l"
+#line 54 "hasm.l"
 { return R14; };
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 52 "hasm.l"
+#line 55 "hasm.l"
 { return R15; };
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 54 "hasm.l"
+#line 57 "hasm.l"
 { return SP;	 };
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 55 "hasm.l"
+#line 58 "hasm.l"
 { return LCL;	 };
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 56 "hasm.l"
+#line 59 "hasm.l"
 { return ARG;	 };
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 57 "hasm.l"
+#line 60 "hasm.l"
 { return THIS;	 };
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 58 "hasm.l"
+#line 61 "hasm.l"
 { return THAT;	 };
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 59 "hasm.l"
+#line 62 "hasm.l"
 { return SCREEN; };
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 60 "hasm.l"
+#line 63 "hasm.l"
 { return KBD;	 };
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 62 "hasm.l"
+#line 65 "hasm.l"
 { return ZERO;								};
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 63 "hasm.l"
+#line 66 "hasm.l"
 { return ONE;								};
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 64 "hasm.l"
+#line 67 "hasm.l"
 { yylval.ival = atoi(yytext); return NUM;	};
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 65 "hasm.l"
+#line 68 "hasm.l"
 { yylval.sval = yytext; return ID;			};
 	YY_BREAK
 case 52:
 /* rule 52 can match eol */
 YY_RULE_SETUP
-#line 66 "hasm.l"
+#line 69 "hasm.l"
 { line++;									};
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 67 "hasm.l"
+#line 70 "hasm.l"
 { /*pass*/									};
 	YY_BREAK
 case 54:
 /* rule 54 can match eol */
 YY_RULE_SETUP
-#line 68 "hasm.l"
+#line 71 "hasm.l"
 { /*pass*/line++;							};
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 73 "hasm.l"
+{ return _EOF_; };
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 70 "hasm.l"
+#line 74 "hasm.l"
 { printf("Unknown Character %s...\n", yytext); };
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 71 "hasm.l"
+#line 75 "hasm.l"
 ECHO;
 	YY_BREAK
-#line 1054 "lex.yy.c"
-case YY_STATE_EOF(INITIAL):
-	yyterminate();
+#line 1061 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2056,4 +2061,4 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 71 "hasm.l"
+#line 75 "hasm.l"

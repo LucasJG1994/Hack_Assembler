@@ -1,38 +1,54 @@
 #include "parser_init.h"
+#include "scanner.h"
+
+#include <string>
+#include <vector>
+
 #include <iostream>
 #include <stdio.h>
 
+extern std::vector<std::string> ID;
+
+bool second_pass = false;
+
 int main(int argc, char** argv){
 	if(argc == 2){
-		FILE* fp;
-		if(fopen_s(&fp, argv[1], "r") != 0){
-			std::cout << "Failed to open file " << argv[1] << "...\n";
-			return 0;
-		}
-		
-		fseek(fp, 0L, SEEK_END);
-		long length = ftell(fp);
-		fseek(fp, 0L, SEEK_SET);
-		
-		char* buffer = new char[length];
-		if(buffer == nullptr){
-			fclose(fp);
-			std::cout << "Failed to allocate memory...\n";
-			return 0;
-		}
-		
-		fread(buffer, sizeof(char), length, fp);
-		fclose(fp);
-		
-		buffer[length] = 0;
+		yyinit(argv[1]);
+		parser_init();
+		yydestroy();
 
-		//First Pass
-		parser_init(buffer);
-		//Second Pass
-		parser_init(buffer);
-		
-		delete[] buffer;
+		std::cout << "1st PASS\n";
+
+		second_pass = true;
+
+		yyinit(argv[1]);
+		parser_init();
+		yydestroy();
+
+		std::cout << "2nd PASS\n";
+
 		std::cout << "Done...\n";
-	} else std::cout << "Usage: hasm <file_name>\n";
+	} //else std::cout << "Usage: hasm <file_name>\n";
+
+	yyinit("Release/Pong.asm");
+	parser_init();
+	yydestroy();
+
+	std::cout << "1st PASS\n";
+
+	for (int i = 0; i < ID.size(); i++) {
+		std::cout << "KEY: " << ID[i] << std::endl;
+	}
+
+	second_pass = true;
+
+	yyinit("Release/Pong.asm");
+	parser_init();
+	yydestroy();
+
+	std::cout << "2nd PASS\n";
+
+	std::cout << "Done...\n";
+
 	return 0;
 }

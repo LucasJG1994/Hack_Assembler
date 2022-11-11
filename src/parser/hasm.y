@@ -1,13 +1,13 @@
 %{
 	#include "parser_init.h"
-	#include "lex.yy.h"
+	//#include "lex.yy.h"
+	#include "scanner.h"
 	#include "file_writer.h"
 	#include "label.h"
 	
 	#include <stdio.h>
 	
 	int line;
-	int var_count;
 	int op_count;
 %}
 
@@ -21,7 +21,7 @@
 %token JGT JEQ JGE JLT JNE JLE JMP
 %token R0 R1 R2 R3 R4 R5 R6 R7 R8 R9 R10 R11 R12 R13 R14 R15
 %token SP LCL ARG THIS THAT KBD SCREEN
-%token TEMP0 TEMP1 TEMP2 TEMP3 TEMP4 TEMP5 TEMP6 TEMP7
+%token _EOF_
 %token <ival> ZERO 
 %token <ival> ONE
 %token <ival> NUM
@@ -68,15 +68,7 @@ expr:	  dst EQ cmp			{ $$ = (($1 << 3) | ($3 << 6)) | (7 << 13); op_count++;		}
 		| AT R15				{ $$ = 15;		op_count++;									}
 		| AT SCREEN				{ $$ = 16384;	op_count++;									}
 		| AT KBD				{ $$ = 24576;	op_count++;									}
-		| AT TEMP0				{ $$ = 5;		op_count++;									}
-		| AT TEMP1				{ $$ = 6;		op_count++;									}
-		| AT TEMP2				{ $$ = 7;		op_count++;									}
-		| AT TEMP3				{ $$ = 8;		op_count++;									}
-		| AT TEMP4				{ $$ = 9;		op_count++;									}
-		| AT TEMP5				{ $$ = 10;		op_count++;									}
-		| AT TEMP6				{ $$ = 11;		op_count++;									}
-		| AT TEMP7				{ $$ = 12;		op_count++;									}
-		| AT ID					{ $$ = label_get($2, &var_count); op_count++;				}
+		| AT ID					{ $$ = label_get($2); op_count++;				}
 		| LP ID RP				{ $$ = -1; label_add($2, op_count);							}
 		;
 
@@ -136,16 +128,14 @@ jmp:	  JGT					{ $$ = 0b0001; }
 
 %%
 
-void parser_init(const char* buffer){
+void parser_init(){
 	fw_init();
 
 	line = 0;
 	op_count = 0;
-	var_count = 16;
 	
-	yy_scan_string(buffer);
 	yyparse();
-	
+
 	fw_write(0);
 	fw_write(0);
 
@@ -153,6 +143,6 @@ void parser_init(const char* buffer){
 }
 
 int yyerror(const char* msg){
-	printf("%s (%s) (%d)\n", msg, yytext, line);
+	printf("%s (%d)\n", msg, line);
 	return 0;
 }
